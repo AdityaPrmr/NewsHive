@@ -23,11 +23,11 @@ function NewsInfo() {
     const getData = async()=>{
         try
         {
-        const data  = await axios.post("https://newshive-express-1.onrender.com/news",{id});
+        const data  = await axios.post("https://newshive-express-1.onrender.com/newsInfo",{id});
         if(data.status == 200)
         {
-            setNewsItem(data.data);
-            console.log(data);
+            setNewsItem(data.data[0]);
+            console.log(data.data[0]);
             setLoading(false);
         }
         else
@@ -66,7 +66,10 @@ function NewsInfo() {
         />
         <h3 className="text-3xl font-bold mt-4">{newsItem.title}</h3>
         <p className="mt-2 text-[#555555]">{newsItem.description}</p>
-        <p className="mt-4 text-lg">{newsItem.content}</p>
+        <p
+          className="mt-4 text-lg"
+          dangerouslySetInnerHTML={{ __html: newsItem.content }}
+        ></p>
       </div>
     </div>
   );
