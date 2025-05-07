@@ -118,7 +118,7 @@ const News = () => {
                                         />
                                     </td>
                                     <td className="px-4 py-3 truncate text-center">{news.category}</td>
-                                    <td className="px-4 py-3 truncate text-center">{news.editor || "N/A"}</td>
+                                    <td className="px-4 py-3 truncate text-center">{news.repoter || "N/A"}</td>
                                     <td className="px-4 py-3 text-center">{new Date(news.publishedAt).toLocaleDateString()}</td>
                                     <td className="px-4 py-3 text-center">
                                     <span
